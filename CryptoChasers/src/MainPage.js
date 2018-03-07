@@ -31,7 +31,7 @@ export default class MainPage extends Component<Props> {
     .then((responseData) => rssParser.parse(responseData))
     .then((rss) => {
       this.setState({rss: rss});
-      this.setState({filteredContent: rss.items.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))});
+      this.setState({filteredContent: rss.items});
     });
 
   }
