@@ -2,6 +2,8 @@
  * Made for CryptoChasers Confidential group
  */
 import React, { Component } from 'react';
+import { Provider } from "react-redux";
+import store from "./src/store";
 import {
   Platform,
   ScrollView,
@@ -10,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-import MainPage from './src/MainPage';
+import MainPage from './src/views/MainPage';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -19,15 +21,15 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   constructor(props){
     super(props);
   }
   render() {
     return (
-      <MainPage>
-      </MainPage>
+      <Provider store={store}>
+        <MainPage />
+      </Provider>
     );
   }
 }
