@@ -37,10 +37,10 @@ export const rssReducer = (state = initialState, action) => {
             return {...state, searchTerm: action.payload, filteredContent: filteredContent };
         }
         case actionTypes.CLEAR_SEARCH_TEXT: {
-            return {...state, searchTerm: ""}
+            return {...state, searchTerm: ""};
         }
         default: {
-            return {...state}
+            return {...state};
         }
     }
 }
